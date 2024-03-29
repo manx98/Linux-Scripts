@@ -11,12 +11,6 @@ if [ $? -ne 0 ]; then
     echo "Failed to update apt source list."
     exit $?
 fi
-echo "Upgrade packages."
-sudo apt upgrade -y
-if [ $? -ne 0 ]; then
-    echo "Failed to upgrade packages."
-    exit $?
-fi
 echo "Install software."
 sudo apt install -y git zsh curl wget vim cmake gcc python3-pip
 if [ $? -ne 0 ]; then
