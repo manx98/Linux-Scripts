@@ -32,7 +32,7 @@ if [ $? -eq 0 ]; then
     exit $?
 fi
 echo "Overwrite /etc/apt/sources.list.d/nvidia-l4t-apt-source.list"
-cat << EOF > /etc/apt/sources.list.d/nvidia-l4t-apt-source.list
+sudo cat << EOF > /etc/apt/sources.list.d/nvidia-l4t-apt-source.list
 deb https://repo.download.nvidia.com/jetson/common r32.7 main
 deb https://repo.download.nvidia.com/jetson/t210 r32.7 main
 EOF
