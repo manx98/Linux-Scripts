@@ -75,3 +75,5 @@ if [ $? -ne 0 ]; then
     echo "Failed to setup zsh plugins."
     exit $?
 fi
+echo "Set default shell to zsh."
+chsh -s $(which zsh)
