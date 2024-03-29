@@ -1,9 +1,4 @@
 #!/bin/bash
-sudo pip3 install -U jetson-stats
-if [ $? -ne 0 ]; then
-    echo "Failed to install jetson-stats."
-    exit $?
-fi
 sudo sed -i 's/ports.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.list
 if [ $? -ne 0 ]; then
     echo "Failed to change apt source."

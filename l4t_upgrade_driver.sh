@@ -1,4 +1,9 @@
 #!/bin/bash
+sudo pip3 install -U jetson-stats
+if [ $? -ne 0 ]; then
+    echo "Failed to install jetson-stats."
+    exit $?
+fi
 sudo cat << EOF > /etc/apt/preferences.d/00-switch-bsp-restrictions
 # Disallow L4T 32.4.x
 Package: nvidia-l4t-*
