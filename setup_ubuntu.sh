@@ -19,12 +19,22 @@ if [ $? -ne 0 ]; then
     echo "Failed to install software."
     exit $?
 fi
-pip3 config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+mkdir -p ~/.pip && cat << EOF > ~/.pip/pip.conf
+[global]
+index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+[install]
+trusted-host = https://pypi.tuna.tsinghua.edu.cn
+EOF
 if [ $? -ne 0 ]; then
     echo "Failed to setup current user pip3 config."
     exit $?
 fi
-sudo pip3 config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+sudo mkdir -p ~/.pip && sudo cat << EOF > ~/.pip/pip.conf
+[global]
+index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+[install]
+trusted-host = https://pypi.tuna.tsinghua.edu.cn
+EOF
 if [ $? -ne 0 ]; then
     echo "Failed to setup root user pip3 config."
     exit $?
