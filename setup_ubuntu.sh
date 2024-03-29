@@ -75,4 +75,3 @@ if [ $? -ne 0 ]; then
     echo "Failed to setup zsh plugins."
     exit $?
 fi
-source ~/.zshrc
